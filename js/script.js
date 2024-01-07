@@ -20,6 +20,9 @@ function submitForm() {
   let email = document.querySelector('#email').value;
   let message = document.querySelector('#message').value;        
   const msg = `Hi, I'm ${name} (${email}). ${message}`;
-  // alert(msg);
-  var win = window.open(`https://wa.me/6285747580700?text=${msg}`, '_blank');
+  // Create a mailto link to open the user's default email client with prefilled details
+  const mailtoLink = `mailto:hafidhmuhammadakbar1@student.uns.ac.id?subject=Contact%20Form&body=${encodeURIComponent(msg)}`;
+  
+  // Open the default email client with the prefilled details
+  window.location.href = mailtoLink;
 }
