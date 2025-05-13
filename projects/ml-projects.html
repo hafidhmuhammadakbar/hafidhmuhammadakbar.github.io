@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafidh Muhammad Akbar | Portfolio</title>
+    <!-- Logo -->
+    <!-- Basic Favicon (Fallback) -->
+    <link rel="icon" href="/assets/favicon/logo_16-16.png" type="image/png">
+
+    <!-- Standard Sizes -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/logo_16-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/logo_32-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/logo_48-48.png">
+
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo_180-180.png">
+
+    <!-- Android/Modern Browsers -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/logo_192-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/logo_512-512.png">
+
+    <!-- Web App Manifest (PWA Support) -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="/index.html" class="text-2xl font-bold text-blue-600">Hafidh Muhammad Akbar</a>
+        <div class="hidden md:flex space-x-8">
+          <a href="/index.html#about" class="hover:text-blue-600">About</a>
+          <a href="/index.html#experience" class="hover:text-blue-600">Experience</a>
+          <a href="/index.html#certifications" class="hover:text-blue-600">Certifications</a>
+          <a href="/index.html#projects" class="hover:text-blue-600">Projects</a>
+          <a href="/index.html#contact" class="hover:text-blue-600">Contact</a>
+        </div>
+        <button id="menu-btn" class="md:hidden">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4">
+        <a href="/index.html#about" class="block py-2 hover:text-blue-600">About</a>
+        <a href="/index.html#experience" class="block py-2 hover:text-blue-600">Experience</a>
+        <a href="/index.html#certifications" class="block py-2 hover:text-blue-600">Certifications</a>
+        <a href="/index.html#projects" class="block py-2 hover:text-blue-600">Projects</a>
+        <a href="/index.html#contact" class="block py-2 hover:text-blue-600">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ML Projects Section -->
+    <section class="pt-24 pb-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Machine Learning Projects</h2>
+        
+        <!-- Project 1 -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-left">
+          <div class="order-1 md:order-2 project-card bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img 
+                src="../assets/images/airqualityprediction.png" 
+                alt="Air Quality Prediction" 
+                class="w-full h-full object-cover project-image transition duration-500"
+              >
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Air Quality Prediction</h3>
+              <p class="text-gray-600 mb-4">Predicting air quality using Three Stacking Regressor.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Pandas</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Scikit-Learn</span>
+                  <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Stacking Regressor</span>
+              </div>
+              <div class="flex space-x-4">
+                <a href="https://www.kaggle.com/code/hafidhmuhakb/data-mining-air-quality-prediction" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                  <i class="fab fa-kaggle mr-2"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="order-2 md:order-1 flex items-center">
+            <div>
+              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Achieved 0.99 R2 score on the test set</li>
+                <li>Implemented a stacking regressor model containing XGBoost, LGBM, and Catboots</li>
+                <li>Utilized Scikit-Learn for model training</li>
+                <li>Applied data preprocessing techniques</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-right">
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img 
+                src="../assets/images/nutrimate.png" 
+                alt="NutriMate App" 
+                class="w-full h-full object-cover project-image transition duration-500"
+              >
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">NutriMate: ML Nutrition App</h3>
+              <p class="text-gray-600 mb-4">Personalized meal planning using collaborative filtering.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Python</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">TensorFlow</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Collaborative Filtering</span>
+              </div>
+              <div class="flex space-x-4">
+                <a href="https://github.com/CH2-PS385/machine-learning" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div>
+              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Achieved 1.872 MSE on the test set</li>
+                <li>Implemented a collaborative filtering model</li>
+                <li>Utilized TensorFlow for model training</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-left">
+          <div class="order-1 md:order-2 project-card bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img 
+                src="../assets/images/genderscanner.jpg" 
+                alt="GenderScanner App" 
+                class="w-full h-full object-cover project-image transition duration-500"
+              >
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">GenderScanner: Gender Face Recognition</h3>
+              <p class="text-gray-600 mb-4">Predict Gender from facial images</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Android</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Kotlin</span>
+                  <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Picpurify</span>
+              </div>
+              <div class="flex space-x-4">
+                <a href="https://github.com/hafidhmuhammadakbar/Gender-Face-Recognition" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                  <i class="fab fa-github mr-2"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="order-2 md:order-1 flex items-center">
+            <div>
+              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Real-time prediction of gender from camera input</li>
+                <li>Face detection and preprocessing using Picpurify API</li>
+                <li>Modern Android UI built with Kotlin</li>
+                <li>Displays prediction confidence score</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-right">
+          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img 
+                src="../assets/images/meatidentify.jpg" 
+                alt="MeatIDentify App" 
+                class="w-full h-full object-cover project-image transition duration-500"
+              >
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">MeatIDentify</h3>
+              <p class="text-gray-600 mb-4">Classifying meat using Convolutional Neural Network.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Python</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">MobileNetV3 Large</span>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">TensorFlow</span>
+              </div>
+              <div class="flex space-x-4">
+                <a href="https://www.kaggle.com/code/hafidhmuhammadakbar/meatidentify-meat-classifier" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                  <i class="fab fa-kaggle mr-2"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div>
+              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li>Achieved 0.97 accuracy on the test set</li>
+                <li>Implemented a Convolutional Neural Network model</li>
+                <li>Utilized TensorFlow for model training</li>
+                <li>Used MobileNetV3 Large as a base model</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+      <div class="container mx-auto">
+        <p>&copy; 2025 Hafidh Muhammad Akbar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      console.log("Inline script works!");
+    </script>
+  </body>
+</html>
