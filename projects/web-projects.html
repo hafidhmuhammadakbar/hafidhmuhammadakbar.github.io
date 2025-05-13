@@ -4,72 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafidh Muhammad Akbar | Portfolio</title>
-    <!-- Logo -->
-    <!-- Basic Favicon (Fallback) -->
+    <!-- Favicon -->
     <link rel="icon" href="../assets/favicon/logo_16-16.png" type="image/png">
-
-    <!-- Standard Sizes -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/logo_16-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/logo_32-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon/logo_48-48.png">
-
-    <!-- Apple Touch Icon (iOS) -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/logo_180-180.png">
-
-    <!-- Android/Modern Browsers -->
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon/logo_192-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon/logo_512-512.png">
-
-    <!-- Web App Manifest (PWA Support) -->
     <link rel="manifest" href="../assets/favicon/site.webmanifest">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS (Animate On Scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome (for icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-      .project-card:hover .project-image {
-        transform: scale(1.05);
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                100: '#E5E7EB',
+                200: '#D1D5DB',
+                300: '#9CA3AF',
+                400: '#6B7280',
+                500: '#4B5563',
+                600: '#374151',
+                700: '#1F2937',
+                800: '#111827',
+                900: '#0F172A',
+              }
+            }
+          }
+        }
       }
-    </style>
+    </script>
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
   </head>
-
-  <body class="bg-gray-50 font-sans">
+  <body class="bg-gray-50 dark:bg-gray-900 font-sans transition-colors duration-300">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md fixed w-full z-10">
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10 transition-colors duration-300">
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-blue-600">Hafidh Muhammad Akbar</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="../index.html#about" class="hover:text-blue-600">About</a>
-          <a href="../index.html#experience" class="hover:text-blue-600">Experience</a>
-          <a href="../index.html#certifications" class="hover:text-blue-600">Certifications</a>
-          <a href="../index.html#projects" class="hover:text-blue-600">Projects</a>
-          <a href="../index.html#contact" class="hover:text-blue-600">Contact</a>
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Hafidh Muhammad Akbar</a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="../index.html#about" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">About</a>
+          <a href="../index.html#experience" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Experience</a>
+          <a href="../index.html#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Certifications</a>
+          <a href="../index.html#projects" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Projects</a>
+          <a href="../index.html#contact" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Contact</a>
+          
+          <!-- Desktop Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg focus:outline-none hidden md:block">
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="theme-icon"></i>
+          </button>
         </div>
-        <button id="menu-btn" class="md:hidden">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
+        
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center md:hidden">
+          <!-- Mobile Theme Toggle -->
+          <button id="theme-toggle-mobile" class="p-2 rounded-lg focus:outline-none">
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="theme-icon-mobile"></i>
+          </button>
+          <button id="menu-btn" class="ml-2">
+            <i class="fas fa-bars text-xl dark:text-gray-300"></i>
+          </button>
+        </div>
       </div>
+      
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4">
-        <a href="../index.html#about" class="block py-2 hover:text-blue-600">About</a>
-        <a href="../index.html#experience" class="block py-2 hover:text-blue-600">Experience</a>
-        <a href="../index.html#certifications" class="block py-2 hover:text-blue-600">Certifications</a>
-        <a href="../index.html#projects" class="block py-2 hover:text-blue-600">Projects</a>
-        <a href="../index.html#contact" class="block py-2 hover:text-blue-600">Contact</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 py-2 px-4 transition-colors duration-300">
+        <a href="../index.html#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">About</a>
+        <a href="../index.html#experience" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Experience</a>
+        <a href="../index.html#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Certifications</a>
+        <a href="../index.html#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Projects</a>
+        <a href="../index.html#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Contact</a>
       </div>
     </nav>
 
-    <!-- ML Projects Section -->
-    <section class="pt-24 pb-16 px-4">
+    <!-- Web Projects Section -->
+    <section class="pt-24 pb-16 px-4 dark:bg-gray-900">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Website Projects</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Website Projects</h2>
         
         <!-- Project 1 -->
         <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-left">
-          <div class="order-1 md:order-2 project-card bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="order-1 md:order-2 project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
             <div class="h-48 overflow-hidden">
               <img 
                 src="../assets/images/pharmacymanagement.png" 
@@ -79,15 +106,15 @@
               >
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Pharmacy Management System</h3>
-              <p class="text-gray-600 mb-4">A web-based pharmacy management system for managing sales and inventory.</p>
+              <h3 class="text-xl font-bold mb-2 dark:text-white">Pharmacy Management System</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">A web-based pharmacy management system for managing sales and inventory.</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">MySQL</span>
-                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Laravel</span>
-                  <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Bootsrap 5</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">MySQL</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">Laravel</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">Bootsrap 5</span>
               </div>
               <div class="flex space-x-4">
-                <a href="https://github.com/alfikiafan/myapotex" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                <a href="https://github.com/alfikiafan/myapotex" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center" target="_blank">
                   <i class="fab fa-github mr-2"></i> Code
                 </a>
               </div>
@@ -95,8 +122,8 @@
           </div>
           <div class="order-2 md:order-1 flex items-center">
             <div>
-              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <h4 class="font-semibold text-lg mb-2 dark:text-white">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Developed a web-based pharmacy management system</li>
                 <li>Implemented user authentication and role management</li>
                 <li>Designed a responsive UI using Bootstrap 5</li>
@@ -108,7 +135,7 @@
 
         <!-- Project 2 -->
         <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-right">
-          <div class="project-card bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
             <div class="h-48 overflow-hidden">
               <img 
                 src="../assets/images/domainmanagement.png" 
@@ -118,15 +145,15 @@
               >
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">DomainMS: Domain Management System</h3>
-              <p class="text-gray-600 mb-4">A web-based domain management system for managing domain.</p>
+              <h3 class="text-xl font-bold mb-2 dark:text-white">DomainMS: Domain Management System</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">A web-based domain management system for managing domain.</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Laravel</span>
-                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Tailwind CSS</span>
-                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">MySQL</span>
+                <span class="bg-blue-100 dark:bg-blue-900 dark:text-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">Laravel</span>
+                <span class="bg-blue-100 dark:bg-blue-900 dark:text-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">Tailwind CSS</span>
+                <span class="bg-blue-100 dark:bg-blue-900 dark:text-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">MySQL</span>
               </div>
               <div class="flex space-x-4">
-                <a href="https://github.com/alscheift/pemweb-domain-management-system" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                <a href="https://github.com/alscheift/pemweb-domain-management-system" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center" target="_blank">
                   <i class="fab fa-github mr-2"></i> Code
                 </a>
               </div>
@@ -134,8 +161,8 @@
           </div>
           <div class="flex items-center">
             <div>
-              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <h4 class="font-semibold text-lg mb-2 dark:text-white">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Developed a web-based domain management system</li>
                 <li>Implemented user authentication and role management</li>
                 <li>Designed a responsive UI using Tailwind CSS</li>
@@ -147,7 +174,7 @@
 
         <!-- Project 3 -->
         <div class="grid md:grid-cols-2 gap-8 mb-12" data-aos="fade-left">
-          <div class="order-1 md:order-2 project-card bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="order-1 md:order-2 project-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
             <div class="h-48 overflow-hidden">
               <img 
                 src="../assets/images/turingmachine.png" 
@@ -157,15 +184,15 @@
               >
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Turing Machine Simulator</h3>
-              <p class="text-gray-600 mb-4">A simple web-based Turing machine simulator for educational purposes.</p>
+              <h3 class="text-xl font-bold mb-2 dark:text-white">Turing Machine Simulator</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">A simple web-based Turing machine simulator for educational purposes.</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">JavaScript</span>
-                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">>HTML</span>
-                  <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">CSS</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">JavaScript</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">>HTML</span>
+                <span class="bg-green-100 dark:bg-green-900 dark:text-green-200 text-green-800 px-2 py-1 rounded-full text-xs">CSS</span>
               </div>
               <div class="flex space-x-4">
-                <a href="https://alscheift.github.io/turing-simulation/" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                <a href="https://alscheift.github.io/turing-simulation/" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center" target="_blank">
                   <i class="fab fa-github mr-2"></i> Code
                 </a>
               </div>
@@ -173,8 +200,8 @@
           </div>
           <div class="order-2 md:order-1 flex items-center">
             <div>
-              <h4 class="font-semibold text-lg mb-2">Key Achievements:</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <h4 class="font-semibold text-lg mb-2 dark:text-white">Key Achievements:</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Developed a web-based Turing machine simulator</li>
                 <li>Implemented a simple UI for user interaction</li>
                 <li>Utilized JavaScript for the simulation logic</li>
@@ -187,11 +214,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
-      <div class="container mx-auto">
+    <footer class="bg-gray-800 dark:bg-gray-800 text-white py-8 text-center">
+      <div class="container mx-auto text-center">
         <p>&copy; 2025 Hafidh Muhammad Akbar. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+      <i class="fas fa-chevron-up"></i>
+    </a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

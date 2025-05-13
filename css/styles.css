@@ -1,0 +1,9 @@
+html {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+body {
+  transition: background-color 300ms ease;
+}
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}

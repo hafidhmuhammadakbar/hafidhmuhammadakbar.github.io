@@ -4,99 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafidh Muhammad Akbar | Portfolio</title>
-    <!-- Logo -->
-    <!-- Basic Favicon (Fallback) -->
+    <!-- Favicon -->
     <link rel="icon" href="assets/favicon/logo_16-16.png" type="image/png">
-
-    <!-- Standard Sizes -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/logo_16-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/logo_32-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon/logo_48-48.png">
-
-    <!-- Apple Touch Icon (iOS) -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/logo_180-180.png">
-
-    <!-- Android/Modern Browsers -->
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/logo_192-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/logo_512-512.png">
-
-    <!-- Web App Manifest (PWA Support) -->
     <link rel="manifest" href="assets/favicon/site.webmanifest">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS (Animate On Scroll) -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              dark: {
+                100: '#E5E7EB',
+                200: '#D1D5DB',
+                300: '#9CA3AF',
+                400: '#6B7280',
+                500: '#4B5563',
+                600: '#374151',
+                700: '#1F2937',
+                800: '#111827',
+                900: '#0F172A',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome (for icons) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body class="bg-gray-50 font-sans">
-    <!-- navbar -->
-    <nav class="bg-white shadow-md fixed w-full z-10">
+  <body class="bg-gray-50 dark:bg-gray-900 font-sans transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10 transition-colors duration-300">
       <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-blue-600">Hafidh Muhammad Akbar</a>
+        <a href="index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Hafidh Muhammad Akbar</a>
+        
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8">
-          <a href="#about" class="hover:text-blue-600">About</a>
-          <a href="#experience" class="hover:text-blue-600">Experience</a>
-          <a href="#certifications" class="hover:text-blue-600">Certifications</a>
-          <a href="#projects" class="hover:text-blue-600">Projects</a>
-          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">About</a>
+          <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Experience</a>
+          <a href="#certifications" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Certifications</a>
+          <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Projects</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Contact</a>
+          
+          <!-- Desktop Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg focus:outline-none hidden md:block">
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="theme-icon"></i>
+          </button>
         </div>
+        
         <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
+        <div class="flex items-center md:hidden">
+          <!-- Mobile Theme Toggle -->
+          <button id="theme-toggle-mobile" class="p-2 rounded-lg focus:outline-none">
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="theme-icon-mobile"></i>
+          </button>
+          <button id="menu-btn" class="ml-2">
+            <i class="fas fa-bars text-xl dark:text-gray-300"></i>
+          </button>
+        </div>
       </div>
-      <!-- Mobile Menu (Hidden by default) -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4">
-        <a href="#about" class="block py-2 hover:text-blue-600">About</a>
-        <a href="#experience" class="block py-2 hover:text-blue-600">Experience</a>
-        <a href="#certifications" class="block py-2 hover:text-blue-600">Certifications</a>
-        <a href="#projects" class="block py-2 hover:text-blue-600">Projects</a>
-        <a href="#contact" class="block py-2 hover:text-blue-600">Contact</a>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 py-2 px-4 transition-colors duration-300">
+        <a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">About</a>
+        <a href="#experience" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Experience</a>
+        <a href="#certifications" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Certifications</a>
+        <a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Projects</a>
+        <a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-300">Contact</a>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center text-center px-4">
+    <section class="min-h-screen flex items-center justify-center text-center px-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div data-aos="fade-up">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Hafidh Muhammad Akbar</span></h1>
-        <p class="text-xl md:text-2xl text-gray-600 mb-6" id="typing-text"></p>
-        <!-- CV, LinkedIn, Github -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 dark:text-white">Hi, I'm <span class="text-blue-600 dark:text-blue-400">Hafidh Muhammad Akbar</span></h1>
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6" id="typing-text"></p>
         <div class="flex justify-center space-x-4">
-          <a href="assets/pdf/CV_HafidhMuhammadAkbar.pdf" class="text-blue-600 hover:underline">Download CV</a>
-          <a href="https://www.linkedin.com/in/hafidh15/" target="_blank" class="text-blue-600 hover:underline">Linkedin</a>
-          <a href="https://www.github.com/hafidhmuhammadakbar" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+          <a href="assets/pdf/CV_HafidhMuhammadAkbar.pdf" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">Download CV</a>
+          <a href="https://www.linkedin.com/in/hafidh15/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Linkedin</a>
+          <a href="https://www.github.com/hafidhmuhammadakbar" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div class="container mx-auto px-4" data-aos="fade-up">
-        <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center dark:text-white">About Me</h2>
         <div class="max-w-3xl mx-auto text-center">
-          <p class="text-gray-700 mb-6">
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
             Fresh Informatics graduate from Universitas Sebelas Maret with a passion for building intelligent systems, specializing in computer vision, NLP, and database optimization. Skilled in Python, SQL, and predictive modeling, with hands-on experience building ML models and working with databases. Enjoys solving real-world problems with data and often explores ideas through competitions and writing. Looking to apply both analytical and programming skills to contribute to impactful projects.
           </p>
-          <!-- Profile Image -->
-          <img src="assets/images/profile.jpg" alt="Profile" class="w-64 h-64 rounded-full mx-auto mb-6" loading="lazy">
+          <img src="assets/images/profile.jpg" alt="Profile" class="w-64 h-64 rounded-full mx-auto mb-6 dark:brightness-90 dark:contrast-110" loading="lazy">
         </div>
       </div>
     </section>
 
     <!-- Work Experiences -->
-    <section id="experience" class="py-16 bg-gray-100">
+    <section id="experience" class="py-16 bg-gray-100 dark:bg-gray-700 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Work Experiences</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Work Experiences</h2>
         <div class="max-w-4xl mx-auto space-y-8">
           <!-- Job 1 -->
           <div class="mb-8" data-aos="fade-right">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold">Teaching Assistant (Database Systems and Programming Basics)</h3>
-              <p class="text-gray-600">Universitas Sebelas Maret | Contract | Aug 2023 - Jan 2025</p>
-              <ul class="mt-4 list-disc pl-5">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition">
+              <h3 class="text-xl font-bold dark:text-white">Teaching Assistant (Database Systems and Programming Basics)</h3>
+              <p class="text-gray-600 dark:text-gray-300">Universitas Sebelas Maret | Contract | Aug 2023 - Jan 2025</p>
+              <ul class="mt-4 list-disc pl-5 dark:text-gray-300">
                 <li>Designed and taught relational database concepts using SQL Server, with focus on query optimization and indexing techniques</li>
                 <li>Implemented Python database integrations to demonstrate data pipeline development on Microsoft Azure</li>
                 <li>Conducted hands-on programming labs covering C/C++ fundamentals including pointers, memory management, and OOP principles</li>
@@ -106,10 +135,10 @@
           </div>
           <!-- Job 2 -->
           <div class="mb-8" data-aos="fade-left">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold">ML Engineer (Project-Based Experience)</h3>
-              <p class="text-gray-600">Bangkit Academy | Internship | Aug 2023 - Jan 2024</p>
-              <ul class="mt-4 list-disc pl-5">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition">
+              <h3 class="text-xl font-bold dark:text-white">ML Engineer (Project-Based Experience)</h3>
+              <p class="text-gray-600 dark:text-gray-300">Bangkit Academy | Internship | Aug 2023 - Jan 2024</p>
+              <ul class="mt-4 list-disc pl-5 dark:text-gray-300">
                 <li>Developed NutriMate, a full-stack nutrition application that calculates daily calorie needs and generates personalized meal plans using machine learning</li>
                 <li>Engineered and optimized a recommendation system using collaborative filtering techniques (TensorFlow, Python, Javascript)</li>
                 <li>Presented technical solutions to industry experts, receiving recognition for innovative approach to personalization</li>
@@ -121,9 +150,9 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="py-16 bg-white">
+    <section id="education" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Education</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Education</h2>
         <div class="relative max-w-3xl mx-auto">          
           <!-- Degree Card -->
           <div class="relative mb-12 pl-10 md:pl-0" data-aos="fade-right">
@@ -133,18 +162,18 @@
                 <img 
                   src="assets/images/uns.png" 
                   alt="UNS Logo" 
-                  class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-blue-100 hover:scale-110 transition-transform duration-300"
+                  class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-blue-100 dark:border-blue-900 hover:scale-110 transition-transform duration-300"
                   data-aos="zoom-in"
                 >
               </div>
               <!-- Degree Details -->
-              <div class="md:w-2/3 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-                <h3 class="text-xl font-bold text-blue-600">Bachelor of Informatics</h3>
-                <p class="text-gray-600 mb-2">Universitas Sebelas Maret | Aug 2021 – Apr 2025</p>
+              <div class="md:w-2/3 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition">
+                <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400">Bachelor of Informatics</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-2">Universitas Sebelas Maret | Aug 2021 – Apr 2025</p>
                 <div class="flex items-center mt-2">
-                  <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">GPA: 3.93/4.00</span>
+                  <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-semibold">GPA: 3.93/4.00</span>
                 </div>
-                <p class="mt-3 text-gray-700">Relevant coursework: Artificial Intelligence, Machine Learning, Data Mining, Databse Management, Web Development</p>
+                <p class="mt-3 text-gray-700 dark:text-gray-300">Relevant coursework: Artificial Intelligence, Machine Learning, Data Mining, Database Management, Web Development</p>
               </div>
             </div>
           </div>
@@ -153,22 +182,22 @@
     </section>
 
     <!-- Certifications -->
-    <section id="certifications" class="py-16 bg-gray-100">
+    <section id="certifications" class="py-16 bg-gray-100 dark:bg-gray-700 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Certifications</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Certifications</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <!-- Certification Card 1 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-left">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-left">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/google.svg" alt="Google" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">TensorFlow Developer</h3>
+                <h3 class="text-lg font-bold dark:text-white">TensorFlow Developer</h3>
               </div>
-              <p class="text-gray-600 mb-4">Google | Sept 2024 - Sept 2029</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Google | Sept 2024 - Sept 2029</p>
               <a 
                 href="https://www.credential.net/3b490ae2-9b3e-46c2-8a03-0009de9bb20f" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -176,17 +205,17 @@
           </div>
 
           <!-- Certification Card 2 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-right">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-right">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/coursera.svg" alt="Coursera" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">TensorFlow: Data and Deployment</h3>
+                <h3 class="text-lg font-bold dark:text-white">TensorFlow: Data and Deployment</h3>
               </div>
-              <p class="text-gray-600 mb-4">Coursera | Nov 2023</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Coursera | Nov 2023</p>
               <a 
                 href="https://coursera.org/verify/specialization/KRZ7FZT6NDHM" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -194,17 +223,17 @@
           </div>
 
           <!-- Certification Card 3 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-right">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-right">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/coursera.svg" alt="Coursera" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">Structuring Machine Learning Projects</h3>
+                <h3 class="text-lg font-bold dark:text-white">Structuring Machine Learning Projects</h3>
               </div>
-              <p class="text-gray-600 mb-4">Coursera | Nov 2023</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Coursera | Nov 2023</p>
               <a 
                 href="https://coursera.org/verify/P2WZFESQ964T" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -212,17 +241,17 @@
           </div>
 
           <!-- Certification Card 4 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-right">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-right">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/coursera.svg" alt="Coursera" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">DeepLearning.AI TensorFlow Developer</h3>
+                <h3 class="text-lg font-bold dark:text-white">DeepLearning.AI TensorFlow Developer</h3>
               </div>
-              <p class="text-gray-600 mb-4">Coursera | Oct 2023</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Coursera | Oct 2023</p>
               <a 
                 href="https://coursera.org/verify/professional-cert/S9QAY45PWA8E" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -230,17 +259,17 @@
           </div>
 
           <!-- Certification Card 5 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-right">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-right">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/coursera.svg" alt="Coursera" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">Machine Learning Specialization</h3>
+                <h3 class="text-lg font-bold dark:text-white">Machine Learning Specialization</h3>
               </div>
-              <p class="text-gray-600 mb-4">Coursera | Oct 2023</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Coursera | Oct 2023</p>
               <a 
                 href="https://coursera.org/verify/specialization/VNLKHUAB8ZAV" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -248,17 +277,17 @@
           </div>
 
           <!-- Certification Card 6 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition" data-aos="flip-right">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="flip-right">
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <img src="assets/icons/coursera.svg" alt="Coursera" class="w-12 h-12 mr-4">
-                <h3 class="text-lg font-bold">Mathematics for Machine Learning and Data Science</h3>
+                <h3 class="text-lg font-bold dark:text-white">Mathematics for Machine Learning and Data Science</h3>
               </div>
-              <p class="text-gray-600 mb-4">Coursera | Oct 2023</p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">Coursera | Oct 2023</p>
               <a 
                 href="https://coursera.org/verify/specialization/LVRGN9LBW3RT" 
                 target="_blank"
-                class="inline-flex items-center text-blue-600 hover:underline"
+                class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline"
               >
                 View Credential <i class="fas fa-external-link-alt ml-2"></i>
               </a>
@@ -269,24 +298,24 @@
     </section>
 
     <!-- Awards -->
-    <section id="awards" class="py-16 bg-white">
+    <section id="awards" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Awards</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Awards</h2>
         <div class="max-w-4xl mx-auto space-y-8">
           <!-- Award 1 -->
-          <div class="bg-white border-l-4 border-gold-500 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-right">
+          <div class="bg-white dark:bg-gray-700 border-l-4 border-yellow-500 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="fade-right">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-yellow-500">
                   <i class="fas fa-trophy text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">1st Winner & Best Paper - Gemastik XVI 2023</h3>
-                  <p class="text-gray-600 mb-3">Puspresnas, Kemdikbudristek | Sep 2023</p>
-                  <button class="text-blue-600 hover:underline focus:outline-none toggle-details">
+                  <h3 class="text-xl font-bold dark:text-white">1st Winner & Best Paper - Gemastik XVI 2023</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-3">Puspresnas, Kemdikbudristek | Sep 2023</p>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none toggle-details">
                     Show Details <i class="fas fa-chevron-down ml-1"></i>
                   </button>
-                  <div class="details hidden mt-3 text-gray-700">
+                  <div class="details hidden mt-3 text-gray-700 dark:text-gray-300">
                     <p>Developed "AGU-NET: Attention Ghost U-Net for Biomedical Image Polyp Segmentation", an attention-based deep learning model achieving 86.52% mIoU on endoscopic images.</p>
                   </div>
                 </div>
@@ -295,19 +324,19 @@
           </div>
 
           <!-- Award 2 -->
-          <div class="bg-white border-l-4 border-gold-500 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-left">
+          <div class="bg-white dark:bg-gray-700 border-l-4 border-yellow-500 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="fade-left">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-yellow-500">
                   <i class="fas fa-trophy text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">1st Place - 11th Airlangga Ideas Competition 2023</h3>
-                  <p class="text-gray-600 mb-3">Universitas Airlangga | Nov 2023</p>
-                  <button class="text-blue-600 hover:underline focus:outline-none toggle-details">
+                  <h3 class="text-xl font-bold dark:text-white">1st Place - 11th Airlangga Ideas Competition 2023</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-3">Universitas Airlangga | Nov 2023</p>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none toggle-details">
                     Show Details <i class="fas fa-chevron-down ml-1"></i>
                   </button>
-                  <div class="details hidden mt-3 text-gray-700">
+                  <div class="details hidden mt-3 text-gray-700 dark:text-gray-300">
                     <p>Designed "Improved Factorized Residual U-Net" for medical image segmentation, achieving 90.24% mIoU through optimized feature extraction modules.</p>
                   </div>
                 </div>
@@ -316,20 +345,20 @@
           </div>
 
           <!-- Award 3 -->
-          <div class="bg-white border-l-4 border-silver-500 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-left">
+          <div class="bg-white dark:bg-gray-700 border-l-4 border-gray-400 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="fade-left">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-gray-400">
                   <i class="fas fa-medal text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">Finalist - Gemastik XVII 2024</h3>
-                  <p class="text-gray-600 mb-3">Puspresnas, Kemdikbudristek | Sep 2024</p>
-                  <button class="text-blue-600 hover:underline focus:outline-none toggle-details">
+                  <h3 class="text-xl font-bold dark:text-white">Finalist - Gemastik XVII 2024</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-3">Puspresnas, Kemdikbudristek | Sep 2024</p>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none toggle-details">
                     Show Details <i class="fas fa-chevron-down ml-1"></i>
                   </button>
-                  <div class="details hidden mt-3 text-gray-700">
-                    <p>Designed "Improved Factorized Residual U-Net" for medical image segmentation, achieving 90.24% mIoU through optimized feature extraction modules.</p>
+                  <div class="details hidden mt-3 text-gray-700 dark:text-gray-300">
+                    <p>Ranked Top 6 nationally in predicting university tuition fee categories (UKT) using machine learning based on socioeconomic data analysis.</p>
                   </div>
                 </div>
               </div>
@@ -337,19 +366,19 @@
           </div>
 
           <!-- Award 4 -->
-          <div class="bg-white border-l-4 border-silver-500 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-right">
+          <div class="bg-white dark:bg-gray-700 border-l-4 border-yellow-500 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="fade-right">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-yellow-500">
                   <i class="fas fa-trophy text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">1st Place - Academic Competition of Data Science 2024</h3>
-                  <p class="text-gray-600 mb-3">Universitas Surabaya | Oct 2024</p>
-                  <button class="text-blue-600 hover:underline focus:outline-none toggle-details">
+                  <h3 class="text-xl font-bold dark:text-white">1st Place - Academic Competition of Data Science 2024</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-3">Universitas Surabaya | Oct 2024</p>
+                  <button class="text-blue-600 dark:text-blue-400 hover:underline focus:outline-none toggle-details">
                     Show Details <i class="fas fa-chevron-down ml-1"></i>
                   </button>
-                  <div class="details hidden mt-3 text-gray-700">
+                  <div class="details hidden mt-3 text-gray-700 dark:text-gray-300">
                     <p>Created "Pixel Attention Half-UNet for Satellite Image Building Detection", a computationally efficient model for satellite image analysis with 70.9% mIoU accuracy.</p>
                   </div>
                 </div>
@@ -361,25 +390,25 @@
     </section>
 
     <!-- Publications & Conferences -->
-    <section id="publications" class="py-16 bg-gray-100">
+    <section id="publications" class="py-16 bg-gray-100 dark:bg-gray-700 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Publications</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center dark:text-white" data-aos="fade-up">Publications</h2>
         <div class="max-w-4xl mx-auto">
           <!-- Publication 1 -->
-          <div class="mb-8 bg-white rounded-lg shadow-md hover:shadow-lg transition" data-aos="zoom-in">
+          <div class="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="zoom-in">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-blue-500">
                   <i class="fas fa-file-alt text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">AGU-NET: Attention Ghost U-Net for Biomedical Image Polyp Segmentation</h3>
-                  <p class="text-gray-600 mb-2">Buletin Gemastik, Oct 2023</p>
+                  <h3 class="text-xl font-bold dark:text-white">AGU-NET: Attention Ghost U-Net for Biomedical Image Polyp Segmentation</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-2">Buletin Gemastik, Oct 2023</p>
                   <div class="flex flex-wrap gap-2 mt-3">
                     <a 
                       href="https://buletingemastik.id/index.php/bg/article/view/12"
                       target="_blank"
-                      class="flex items-center text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+                      class="flex items-center text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full"
                     >
                       <i class="fas fa-link mr-1"></i> Full Text
                     </a>
@@ -389,21 +418,21 @@
             </div>
           </div>
 
-          <!-- Publication 2 (Conference) -->
-          <div class="mb-8 bg-white rounded-lg shadow-md hover:shadow-lg transition" data-aos="zoom-in">
+          <!-- Publication 2 -->
+          <div class="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="zoom-in">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-green-500">
                   <i class="fas fa-microphone text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">ACMU-Net: An Efficient Architecture Based on ConvMixer and Attention Mechanism for Colorectal Polyp Segmentation</h3>
-                  <p class="text-gray-600 mb-2">IEEE ICSMech 2024</p>
+                  <h3 class="text-xl font-bold dark:text-white">ACMU-Net: An Efficient Architecture Based on ConvMixer and Attention Mechanism for Colorectal Polyp Segmentation</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-2">IEEE ICSMech 2024</p>
                   <div class="flex flex-wrap gap-2 mt-3">
                     <a 
                       href="https://doi.org/10.1109/ICSMech62936.2024.10812309"
                       target="_blank"
-                      class="flex items-center text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full"
+                      class="flex items-center text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full"
                     >
                       <i class="fas fa-doi mr-1"></i> DOI
                     </a>
@@ -413,21 +442,21 @@
             </div>
           </div>
 
-          <!-- Publication 3 (Conference) -->
-          <div class="mb-8 bg-white rounded-lg shadow-md hover:shadow-lg transition" data-aos="zoom-in">
+          <!-- Publication 3 -->
+          <div class="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-900 hover:shadow-lg dark:hover:shadow-gray-800 transition" data-aos="zoom-in">
             <div class="p-6">
               <div class="flex items-start">
                 <div class="mr-4 text-green-500">
                   <i class="fas fa-microphone text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold">Improved Factorized Residual U-Net for Biomedical Polyp Segmentation</h3>
-                  <p class="text-gray-600 mb-2">IEEE ITIS 2024</p>
+                  <h3 class="text-xl font-bold dark:text-white">Improved Factorized Residual U-Net for Biomedical Polyp Segmentation</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mb-2">IEEE ITIS 2024</p>
                   <div class="flex flex-wrap gap-2 mt-3">
                     <a 
                       href="https://doi.org/10.1109/ITIS64716.2024.10845587"
                       target="_blank"
-                      class="flex items-center text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full"
+                      class="flex items-center text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full"
                     >
                       <i class="fas fa-doi mr-1"></i> DOI
                     </a>
@@ -441,26 +470,26 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="py-16 bg-white">
+    <section id="projects" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center" data-aos="fade-up">Projects</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center dark:text-white" data-aos="fade-up">Projects</h2>
         <div class="grid md:grid-cols-2 gap-8">
           <!-- ML Projects -->
           <div class="text-center" data-aos="zoom-in">
-            <div class="bg-gray-100 p-6 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-brain text-5xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-bold mb-2">ML/Data Science</h3>
-              <p class="mb-4">Check out my machine learning projects.</p>
-              <a href="projects/ml-projects.html" class="text-blue-600 hover:underline">View Projects →</a>
+            <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg hover:shadow-lg dark:hover:shadow-gray-900 transition">
+              <i class="fas fa-brain text-5xl text-blue-600 dark:text-blue-400 mb-4"></i>
+              <h3 class="text-xl font-bold mb-2 dark:text-white">ML/Data Science</h3>
+              <p class="mb-4 dark:text-gray-300">Check out my machine learning projects.</p>
+              <a href="projects/ml-projects.html" class="text-blue-600 dark:text-blue-400 hover:underline">View Projects →</a>
             </div>
           </div>
           <!-- Web Projects -->
           <div class="text-center" data-aos="zoom-in">
-            <div class="bg-gray-100 p-6 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-code text-5xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-bold mb-2">Web Development</h3>
-              <p class="mb-4">Check out my web development projects.</p>
-              <a href="projects/web-projects.html" class="text-blue-600 hover:underline">View Projects →</a>
+            <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg hover:shadow-lg dark:hover:shadow-gray-900 transition">
+              <i class="fas fa-code text-5xl text-blue-600 dark:text-blue-400 mb-4"></i>
+              <h3 class="text-xl font-bold mb-2 dark:text-white">Web Development</h3>
+              <p class="mb-4 dark:text-gray-300">Check out my web development projects.</p>
+              <a href="projects/web-projects.html" class="text-blue-600 dark:text-blue-400 hover:underline">View Projects →</a>
             </div>
           </div>
         </div>
@@ -468,86 +497,158 @@
     </section>
     
     <!-- Skills -->
-    <section id="skills" class="py-16 bg-gray-100">
+    <section id="skills" class="py-16 bg-gray-100 dark:bg-gray-700 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center" data-aos="fade-up">Skills</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center dark:text-white" data-aos="fade-up">Skills</h2>
         <div class="flex flex-wrap justify-center gap-8">
+          <!-- Python -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/python.svg" alt="Python" class="w-8 h-8 mx-auto mb-2">
-            <p>Python</p>
+            <img src="assets/icons/python.svg" alt="Python" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Python</p>
           </div>
+          <!-- JavaScript -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/javascript.svg" alt="JavaScript" class="w-8 h-8 mx-auto mb-2">
-            <p>JavaScript</p>
+            <img src="assets/icons/javascript.svg" alt="JavaScript" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">JavaScript</p>
           </div>
+          <!-- MySQL -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/mysql.svg" alt="MySQL" class="w-8 h-8 mx-auto mb-2">
-            <p>MySQL</p>
+            <img src="assets/icons/mysql.svg" alt="MySQL" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">MySQL</p>
           </div>
+          <!-- TensorFlow -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/tensorflow.svg" alt="TensorFlow" class="w-8 h-8 mx-auto mb-2">
-            <p>TensorFlow</p>
+            <img src="assets/icons/tensorflow.svg" alt="TensorFlow" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">TensorFlow</p>
           </div>
+          <!-- Keras -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/keras.svg" alt="Keras" class="w-8 h-8 mx-auto mb-2">
-            <p>Keras</p>
+            <img src="assets/icons/keras.svg" alt="Keras" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Keras</p>
           </div>
+          <!-- Jupyter -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/jupyter.svg" alt="Jupyter" class="w-8 h-8 mx-auto mb-2">
-            <p>Jupyter</p>
+            <img src="assets/icons/jupyter.svg" alt="Jupyter" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Jupyter</p>
           </div>
+          <!-- Google Colab -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/googlecolab.svg" alt="Google Colab" class="w-8 h-8 mx-auto mb-2">
-            <p>Google Colab</p>
+            <img src="assets/icons/googlecolab.svg" alt="Google Colab" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Google Colab</p>
           </div>
+          <!-- Kaggle -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/kaggle.svg" alt="Kaggle" class="w-8 h-8 mx-auto mb-2">
-            <p>Kaggle</p>
+            <img src="assets/icons/kaggle.svg" alt="Kaggle" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Kaggle</p>
           </div>
+          <!-- PyTorch -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/pytorch.svg" alt="PyTorch" class="w-8 h-8 mx-auto mb-2">
-            <p>PyTorch</p>
+            <img src="assets/icons/pytorch.svg" alt="PyTorch" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">PyTorch</p>
           </div>
+          <!-- Pandas -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/pandas.svg" alt="Pandas" class="w-8 h-8 mx-auto mb-2">
-            <p>Pandas</p>
+            <img src="assets/icons/pandas.svg" alt="Pandas" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Pandas</p>
           </div>
+          <!-- Scikit-Learn -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/scikitlearn.svg" alt="Scikit-Learn" class="w-8 h-8 mx-auto mb-2">
-            <p>Scikit-Learn</p>
+            <img src="assets/icons/scikitlearn.svg" alt="Scikit-Learn" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Scikit-Learn</p>
           </div>
+          <!-- Numpy -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/git.svg" alt="Git" class="w-8 h-8 mx-auto mb-2">
-            <p>Git</p>
+            <img src="assets/icons/numpy.svg" alt="NumPy" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">NumPy</p>
           </div>
+          <!-- OpenCV -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/php.svg" alt="PHP" class="w-8 h-8 mx-auto mb-2">
-            <p>PHP</p>
+            <img src="assets/icons/opencv.svg" alt="OpenCV" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">OpenCV</p>
           </div>
+          <!-- Flask -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/docker.svg" alt="Docker" class="w-8 h-8 mx-auto mb-2">
-            <p>Docker</p>
+            <img src="assets/icons/flask.svg" alt="Flask" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Flask</p>
           </div>
+          <!-- FastAPI -->
           <div class="text-center" data-aos="flip-up">
-            <img src="assets/icons/laravel.svg" alt="Laravel" class="w-8 h-8 mx-auto mb-2">
-            <p>Laravel</p>
+            <img src="assets/icons/fastapi.svg" alt="FastAPI" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">FastAPI</p>
+          </div>
+          <!-- Git -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/git.svg" alt="Git" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Git</p>
+          </div>
+          <!-- PHP -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/php.svg" alt="PHP" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">PHP</p>
+          </div>
+          <!-- Docker -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/docker.svg" alt="Docker" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Docker</p>
+          </div>
+          <!-- Laravel -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/laravel.svg" alt="Laravel" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Laravel</p>
+          </div>
+          <!-- Tailwind CSS -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/tailwindcss.svg" alt="Tailwind CSS" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Tailwind CSS</p>
+          </div>
+          <!-- Bootstrap -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/bootstrap.svg" alt="Bootstrap" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Bootstrap</p>
+          </div>
+          <!-- Figma -->
+          <div class="text-center" data-aos="flip-up">
+            <img src="assets/icons/figma.svg" alt="Figma" 
+                class="w-8 h-8 mx-auto mb-2 dark:filter dark:brightness-0 dark:invert">
+            <p class="dark:text-gray-300">Figma</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">Contact Me</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center dark:text-white">Contact Me</h2>
         <div class="flex justify-center space-x-6 mt-8">
-          <a href="https://linkedin.com/in/hafidh15" class="text-blue-600 hover:text-blue-800" data-aos="flip-up">
+          <a href="https://linkedin.com/in/hafidh15" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300" data-aos="flip-up">
             <i class="fab fa-linkedin text-3xl"></i>
           </a>
-          <a href="https://github.com/hafidhmuhammadakbar" class="text-gray-800 hover:text-black" data-aos="flip-up">
+          <a href="https://github.com/hafidhmuhammadakbar" class="text-gray-800 hover:text-black dark:text-gray-300 dark:hover:text-white" data-aos="flip-up">
             <i class="fab fa-github text-3xl"></i>
           </a>
-          <a href="mailto:hafidhmuhammadakbar15@gmail.com" class="text-red-600 hover:text-red-800" data-aos="flip-up">
+          <a href="mailto:hafidhmuhammadakbar15@gmail.com" class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300" data-aos="flip-up">
             <i class="fas fa-envelope text-3xl"></i>
           </a>
         </div>
@@ -555,11 +656,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
+    <footer class="bg-gray-800 dark:bg-gray-800 text-white py-8 text-center">
       <div class="container mx-auto text-center">
         <p>&copy; 2025 Hafidh Muhammad Akbar. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+      <i class="fas fa-chevron-up"></i>
+    </a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

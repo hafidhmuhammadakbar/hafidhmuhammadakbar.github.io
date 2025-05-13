@@ -58,6 +58,35 @@ document.addEventListener('DOMContentLoaded', function() {
     typeWriter();
   }
 
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeIconMobile = document.getElementById('theme-icon-mobile');
+
+  function toggleTheme() {
+    // Toggle dark mode class on html element
+    document.documentElement.classList.toggle('dark');
+    
+    // Update icons
+    const isDark = document.documentElement.classList.contains('dark');
+    themeIcon.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-gray-700';
+    themeIconMobile.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-gray-700';
+    
+    // Save preference to localStorage
+    localStorage.setItem('darkMode', isDark);
+  }
+
+  // Add event listeners to both buttons
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+  // Initialize theme
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.documentElement.classList.add('dark');
+    themeIcon.className = 'fas fa-sun text-yellow-300';
+    themeIconMobile.className = 'fas fa-sun text-yellow-300';
+  }
   // Initialize AOS if available
   if (typeof AOS !== 'undefined') {
     AOS.init({
