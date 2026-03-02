@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Typing Effect with null check and cleanup
   const typingElement = document.getElementById("typing-text");
   if (typingElement) {
-    const text = "Data Scientist | Machine Learning Engineer | AI Enthusiast";
+    const text = "Data and AI Enthusiast";
     let index = 0;
     const speed = 100;
     
